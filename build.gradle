@@ -24,6 +24,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
 
     compile group: 'org.glassfish', name: 'javax.faces', version: '2.3.2'
     compile (group: 'javax.enterprise', name: 'cdi-api', version: '2.0') {
@@ -34,4 +35,8 @@ dependencies {
 
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.1'
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+configurations {
+    compile.exclude module: 'spring-boot-starter-logging'
 }
